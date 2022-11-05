@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- css 파일 -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- 폰트 파일 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="icon/home.ico">
+
+    <title>Momentum</title>
+</head>
+<body>
+    <!-- 로그아웃 모달 -->
+    <div class="modal-par hidden">
+        <div class="modal">
+            <h2>로그아웃</h2>
+            <p>현재 저장된 일정이 <strong>모두 삭제</strong>됩니다.<br>
+                로그아웃 하시겠습니까?</p>
+
+            <div class="modal-btn">
+                <button>네</button>
+                <button>아니오</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="whole">
+        <!-- 시계&날씨 -->
+        <div class="clockAndWeath">
+            <!-- 시계 -->
+            <div class="clock-par">
+                <h2 id="clock">00:00</h2>
+            </div>
+
+            <!-- 날씨 -->
+            <div id="weather-par">
+                <div class="weather">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="con">
+            <!-- 랜덤 명언 -->
+            <div id="quote-par">
+                <div class="quote">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <!--
+                input 안에 있는 button OR type이 submit인 input 클릭 시
+                작성한 form이 submit 되기 때문에 계속 새로고침 됨.
+                <form> 사용 이유 => 유효성 검사 작동
+            -->
+            <div class="login-par" class="hidden">
+                <form id="login-form">
+                    <!-- 유저 이름 입력 -->
+                    <input class="login-input"
+                        required 
+                        maxlength="15" 
+                        type="text" 
+                        placeholder="이름을 입력해주세요!" 
+                    />
+
+                    <button>로그인</button>
+                </form>
+            </div>
+
+            <!-- 환영 문구 -->
+            <div class="greet-par" class="hidden">
+                <h1 id="greeting"></h1>
+            </div>
+
+            <!-- 투두리스트 -->
+            <!-- 사용자가 일정을 입력하고 나열할 수 있어야 되기 때문에 form 사용 -->
+            <div class="todo-par hidden">
+                <form id="todo-form">
+                    <input
+                        required
+                        type="text"
+                        placeholder="일정을 입력해주세요!"
+                    />
+                </form>
+            </div>
+            <div class="list-par hidden">
+                <ul id="todo-list"></ul>
+                
+                <!-- 도움말 -->
+                <span class="help">!</span>
+                <span class="help-con">
+                    <strong><font color="#004eff">✓</font></strong> : 클릭 시 일정이 완료 처리 됩니다. <br>
+                    <strong><font color="#ff003d">X</font></strong> : 클릭 시 일정이 삭제 됩니다.
+                </span>
+            </div>
+        </div>
+
+        <!-- 로그아웃 -->
+        <div class="logout hidden">
+            <img src="img/logout.png">
+        </div>
+    </div>
+
+    <!-- JS 파일 -->
+    <script src="js/greetings.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
+</body>
+</html>

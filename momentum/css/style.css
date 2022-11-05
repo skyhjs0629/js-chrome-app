@@ -1,0 +1,540 @@
+.hidden {
+    display: none;
+}
+
+
+/* default */
+html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden scroll;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+.whole {
+    width: 100%;
+    height: 100%;
+}
+
+.con {
+    width: 100%;
+    position: absolute;
+    top: 200px;
+}
+
+
+/* background */
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+/* clock */
+.clockAndWeath {
+    width: 100%;
+    position: fixed;
+    top: 30px;
+    display: table;
+    z-index: 999;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    backdrop-filter: blur(10px);
+}
+
+.clock-par {
+    padding-left: 40px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#clock {
+    margin: 0;
+    font-size: 110px;
+    color: white;
+}
+
+
+/* quote */
+#quote-par {
+    padding: 30px 40px;
+}
+
+.quote {
+    position: relative;
+    padding: 10px 15px;
+    display: inline-block;
+    border-radius: 38px;
+    font-size: 16px;
+    color: #313131;
+    background-color: white;
+}
+
+.quote span:first-child {
+    display: inline-block;
+    text-align: justify;
+}
+
+.quote span:last-child {
+    float: right;
+}
+
+/* todo, greeting, quote 말풍선 같이 */
+#todo-list::after, #greeting::after, .quote::after {
+    content: '';
+    width: 0;
+    height: 0;
+    margin-top: -5px;
+    margin-left: -9px;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    border: 10px solid transparent;
+    border-top: 0;
+    border-right-color: white;
+    border-left: 0;
+}
+
+.quote > span:first-child {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+
+/* weather */
+#weather-par {
+    padding-right: 40px;
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+}
+
+#weather-par > img {
+    width: 125px;
+    float: right;
+}
+
+.weather {
+    margin-top: 5px;
+    text-align: right;
+    text-shadow: 0px 0px 3px #00000082;
+}
+
+.weather > span:first-child {
+    margin-right: 5px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.weather > span:last-child {
+    font-size: 20px;
+}
+
+
+/* login */
+.login-par {
+    padding: 0 40px 0 0;
+    text-align: right;
+}
+
+#login-form {
+    padding: 10px 15px;
+    position: relative;
+    display: inline-block;
+    border-radius: 38px;
+    color: #313131;
+    background-color: white;
+}
+
+/* todo, login 말풍선 같이 */
+#todo-form::after, #login-form::after {
+    content: '';
+    /* width/height:0 => 딱지 모양 */
+    width: 0;
+    height: 0;
+    /* 바깥 여백 */
+    margin-top: -5px;
+    margin-left: -10px;
+    /* 위치 */
+    position: absolute;
+    right: -9px;
+    top: 50%;
+    /* 꼬리 만들기 */
+    border: 10px solid transparent;
+    border-top: 0;
+    border-left-color: white;
+    border-right: 0;
+}
+
+#login-form > button {
+    display: none;
+}
+
+.login-input {
+    width: 200px;
+    border: none;
+    font-size: 16px;
+    color: #313131;
+    background-color: transparent;
+}
+
+.login-input:focus {
+    outline: none;
+}
+
+
+/* greeting */
+.greet-par {
+    padding: 0 0 30px 40px;
+}
+
+#greeting {
+    margin: 0;
+    padding: 10px 15px;
+    position: relative;
+    display: inline-block;
+    border-radius: 38px;
+    font-size: 16px;
+    color: #004eff;
+    background-color: white;
+}
+
+
+/* todoList */
+.todo-par {
+    padding: 0 40px 30px 0;
+    text-align: right;
+}
+
+#todo-form {
+    padding: 10px 15px;
+    position: relative;
+    display: inline-block;
+    border-radius: 38px;
+    color: #313131;
+    background-color: white;
+}
+
+#todo-form > input {
+    width: 300px;
+    border: none;
+    font-size: 16px;
+    color: #313131;
+    background-color: transparent;
+}
+
+#todo-form > input:focus {
+    outline: none;
+}
+
+.list-par {
+    padding-left: 40px;
+}
+
+#todo-list {
+    margin: 0;
+    padding: 10px 15px;
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    border-radius: 18px;
+    font-size: 16px;
+    color: #313131;
+    background-color: white;
+}
+
+#todo-list > li {
+    padding: 5px 0;
+}
+
+#todo-list > li > button {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: all 0.2s;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff003d;
+}
+
+#todo-list > li > button:hover {
+    background-color: #b5002a;
+}
+
+#todo-list > li > button:first-child {
+    transition: all 0.2s;
+    background-color: #004eff;
+}
+
+#todo-list > li > button:first-child:hover {
+    background-color: #0033aa;
+}
+
+.help {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: 5px;
+    bottom: -10px;
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.help-con {
+    padding: 10px 15px;
+    position: relative;
+    left: 5px;
+    bottom: 20px;
+    display: inline-block;
+    opacity: 0;
+    border-radius: 5px;
+    line-height: 20px;
+    font-size: 13px;
+    background-color: white;
+    transition: all 0.5s;
+}
+
+.help:hover ~ .help-con {
+    opacity: 1;
+}
+
+
+/* logout */
+.logout {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+}
+
+.logout > img {
+    width: 50px;
+    height: auto;
+    /* transition? 확대 부드럽게 해주기 위함 */
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+
+.logout > img:hover {
+    transform: scale(1.1);
+}
+
+
+/* logoutModal */
+.modal-par {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #ffffff26;
+    z-index: 9999;
+}
+
+.modal {
+    padding: 25px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    box-shadow: 0px 0px 30px #00000069;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.modal > h2 {
+    margin-top: 0;
+}
+
+.modal > p {
+    line-height: 25px;
+}
+
+.modal-btn {
+    text-align: right;
+}
+
+.modal-btn > button {
+    width: 40%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.modal-btn > button:first-child {
+    transition: all 0.5s;
+    color: white;
+    background-color: #9a9a9a;
+}
+
+.modal-btn > button:first-child:hover {
+    background-color: #656565;
+}
+
+.modal-btn > button:last-child {
+    transition: all 0.5s;
+    border: 1px solid #9a9a9a;
+    color: #9a9a9a;
+    background-color: white;
+}
+
+.modal-btn > button:last-child:hover {
+    border: 1px solid transparent;
+    color: white;
+    background-color: #656565;
+}
+
+
+/* 미디어쿼리(태블릿) */
+@media screen and (max-width: 1023px) {
+    /* weather and clock */
+    #clock {
+        font-size: 90px;
+    }
+
+    .weather > span:first-child {
+        font-size: 27px;
+    }
+
+    .weather > span:last-child {
+        font-size: 18px;
+    }
+}
+
+
+/* 미디어쿼리(모바일) */
+@media screen and (max-width: 767px) {
+    /* weather and clock */
+    .clockAndWeath {
+        padding: 0 20px 20px 20px;
+    }
+
+    .clock-par {
+        padding: 0;
+        display: unset;
+    }
+
+    #clock {
+        font-size: 70px;
+    }
+
+    #weather-par {
+        padding: 0;
+        display: block;
+    }
+
+    #weather-par > img {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+
+    .weather {
+        text-align: left;
+    }
+
+    .weather > span:first-child {
+        font-size: 22px;
+    }
+
+    .weather > span:last-child {
+        font-size: 15px;
+    }
+}
+
+
+@media screen and (max-width: 420px) {
+    .con {
+        top: 170px;
+    }
+
+    /* weather and clock */
+    #clock {
+        font-size: 55px;
+    }
+
+    /* quote, greeting, todo */
+    .quote, #greeting {
+        padding: 15px 20px;
+        font-size: 15px;
+        border-radius: 35px;
+    }
+
+    #quote-par {
+        padding: 30px 20px;
+    }
+
+    .greet-par {
+        padding: 0 0 30px 20px;
+    }
+
+    #todo-form > input {
+        width: 220px;
+        font-size: 15px;
+    }
+
+    .todo-par {
+        padding: 0 20px 30px 0;
+    }
+
+    .list-par {
+        padding-left: 20px;
+    }
+
+    #todo-list {
+        font-size: 15px;
+    }
+
+    #todo-list > li > button {
+        width: 23px;
+        height: 23px;
+        font-size: 14px;
+    }
+
+
+    /* login */
+    .login-par {
+        padding: 0 20px 0 0;
+    }
+
+    .login-input {
+        font-size: 15px;
+    }
+
+
+    /* logout */
+    .logout {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .logout > img {
+        width: 40px;
+    }
+
+
+    /* modal */
+    .modal {
+        width: 200px;
+        padding: 10px 10px;
+    }
+}

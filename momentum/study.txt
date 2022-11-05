@@ -1,0 +1,201 @@
+---------- JS로 크롬앱 만들기((VS Code)) ----------
+
+(#1)----------------------------------------------
+ -> 모멘텀 앱 클론
+ -> 클론 코딩? 실제 서비스를 따라 만들면서 배우는 공부 방식
+ -> 크로미움 기반의 브라우저 사용 권장 (= 구글 크롬)
+ -> JS는 브라우저에 내장되어 나오기 때문에 따로 설치가 필요없음.
+     (HTML, CSS도 마찬가지)
+ -> 자바스크립트 + HTML + CSS로 만들 수 있는 것
+  ** three.js : 자바스크립트로 3D 구현하게 해주는 라이브러리
+  ** react native : 자바스크립트로 안드로이드랑 iOS 앱 만들 수 있게 해줌
+  ** electron : 자바스크립트, HTML, CSS로 데스크탑 앱 만들 수 있게 해줌
+  ** socket.io : 채팅, 실시간 기능 가능
+  ** ml5.js : 머신러닝 가능
+ -> 자바스크립트로 백엔드까지 만들 수 있음.
+
+(#2)----------------------------------------------
+ -> 자바스크립트 바로 사용하고 싶으면 웹페이지 - 콘솔(console) 이용
+  ** but 긴 프로그램 작성 시 유용하지 않음.
+	(한 줄만 작성해야 되기 때문)
+ -> 브라우저가 HTML을 열고, HTML이 CSS와 JS파일을 가져오는 것.
+ ✨ ! + Tab 누르면 html 자동완성
+ -> 자바스크립트 파일은 주로 끝에서 가져옴.
+ -> 데이터 타입 : 숫자, 문자 ...
+   ** 숫자 : Integer(EX 2), float(EX 1.5)
+   ** 문자 : string(처음부터 끝까지 글자로 이뤄진 것)
+ -> console.log(값) : 괄호 안에 있는 값을 콘솔에 출력
+   ** 문자 출력 시 따옴표 or 작은 따옴표 사용
+ -> variable : 값을 저장하거나 유지하는 역할
+   ** const : constant(상수), 바뀌지 않는 값. (기본적으로 많이 사용)
+     EX const a = 5; // a가 5라는 값을 가지고 있겠다.
+   ** let : 바뀌는 값.
+   ==> let 대신 const를 사용하면 오류 발생
+       값을 업데이트 할 수 없음.
+   ** boolean : true or false(따옴표 X)
+     EX const a = true; // true 출력
+   ** null : 아무 것도 없다
+   ==> variable 안에 아무 것도 없다는 것을 확실하게 하기 위함
+     EX const a = null; // a에 아무 것도 없다
+   ** undefined : variable이 메모리에 만들어졌지만 값이 없다
+     EX const a;
+ -> array : 데이터로 이뤄진 리스트
+   EX const a = [1, 2, "hello", true, null];
+   ==> 리스트에서 두 번째 값을 받아오려면?
+       console.log(a[1]);
+       컴퓨터는 0부터 숫자를 세기 때문
+   ** __.push(값) : 리스트에 값 추가
+ -> const a = {이름:값, 이름:값, ...};
+    a라는 객체를 생성하면서 {} 안에 프로퍼티 추가
+   ==> 데이터를 정리할 때 좋음.
+   ** 안에 있는 값을 업데이트 할 수 있음.
+      const는 변하지 않는 값인데 왜?
+      // 객체가 아닌 안에 있는 값을 수정하는 것이기 때문
+   ** 프로퍼티 추가하려면 a.이름 = "값"; 코드 작성
+ -> function? 계속 반복해서 사용할 수 있는 코드 조각
+    = 코드를 캡슐화하여 실행을 여러 번 할 수 있게
+   EX function a() {abcd...} 
+      // 함수 a 실행할 때마다 abcd... 실행
+   ** argument(인수) : function 실행하는 동안 어떤 정보를
+      function에게 보낼 수 있는 방법
+     EX function a(name){abcd...}
+        a("lala");
+        // 인수 name으로 데이터 lala가 들어오고 abcd... 실행
+        // name은 function 안에서만 존재
+ ✨ 항상 const / 가끔 let / 네버 var
+ -> return : 함수 안에서 return을 해야 값을 반환 시켜줌.
+   ** return 다음 코드는 실행되지 않음!
+   ==> return 하는 순간 function이 종료되기 때문.
+ -> 조건문 : true인지 false인지?
+   ** if문 : 만약 ~하면
+   ==> true면 if문 실행
+   ==> age === 10 / age !== 10 이라고 적어야 됨.
+ -> prompt(문자, default)
+   // 사용자로부터 입력 받을 수 있는 창을 띄워줌.
+   // 입력or취소 전까진 그 다음 코드 실행 X
+   ==> 잘 사용하지 않음. (CSS 적용 X)
+ -> value의 type을 보기 위해선 "typeof" 사용
+   EX console.log(typeof age);
+      // age의 type을 출력
+ -> parseInt() : string을 number로 변환
+ -> isNaN() : 결과를 boolean으로 알려줌
+   // number가 아닌지 판단
+   // false : number가 아닌 것이 아니라는 뜻(= number라는 뜻)
+   // true : number가 아니라는 뜻
+
+(#3)----------------------------------------------
+(🟢 : 자주 사용하는)
+ -> document는 object이다.
+ -> document.getElementById(id이름) : string을 전달 받는 함수
+   // HTML의 id와 이름이 똑같아야 함!
+ -> document.getElementByClassName(class이름)
+   // ById보다 ClassName을 더 많이 씀.
+ -> document.getElementByTagName(태그 이름)
+ 🟢 document.querySelector() : element를 CSS 방식으로 검색 가능
+   // 특정 class/id 안에 있는 태그를 가지고 올 수 있음
+   // 단, 클래스가 많을 경우 첫번째 element만 가져옴!
+ -> document.querySelectorAll()
+   // 클래스가 많을 경우 모든 element를 array로 가져옴.
+ -> console.dir() : element를 더 자세하게 보여줌.
+ -> addEventListener() : 이벤트를 listen하는 것.
+   EX a.addEventListener("click", aClick);
+     // a를 click하는 것을 listen하면, aClick이라는 function이 동작한다.
+   ** a. addEventListener("click", aClick)
+     = a.onclick = aClick;
+   ** 그러나 addEventListener()를 더 많이 사용!
+      왜냐하면 removeEventListener을 이용하여 제거가 가능.
+ ✨ 값이 일치함을 확인하기 위해선 '==='
+ -> classList : class들의 목록으로 작업할 수 있게 해줌. (기존 클래스 보존)
+   ** className은 모든 걸 교체해버리기 때문에 classList를 더 많이 사용!
+   ** classList.contains(클래스 이름) 
+      : classList 목록에 '클래스 이름'이 포함
+   ** classList.remove(클래스 이름)
+      : classList 목록에 있는 '클래스 이름' 제거
+   ** classList.add(클래스 이름)
+      : classList 목록에 '클래스 이름' 추가
+   ** classList.toggle(클래스 이름)
+      : classList에 '클래스 이름'이 존재하는지 확인
+        존재하면 클래스 제거 / 존재하지 않으면 클래스 추가
+
+(#4)----------------------------------------------
+ ✨ JS에서 value를 기억하게 해주는 아주 쉬운 방법
+ -> <input> 태그의 유효성 검사를 작동시키기 위해선 <form> 태그로 감싸줘야 됨.
+   ** required : 반드시 값을 입력하도록
+   ** maxlength : 값 길이 제한
+   ** placeholder : 입력 필드의 도움말
+ -> string과 변수 연결?
+   EX "Hello " + username
+     = `Hello ${username}`
+  => 보통 후자를 더 선호 (`` : 백틱)
+ -> localStorage : 웹 스토리지 객체 (= 작은 DB같은 API)
+   ** 페이지를 새로고침 해도 데이터 사라지지 않음.
+   ** localStorage.setItem(저장할 값 이름, 저장할 값)
+     : local storage에 정보 저장 가능.
+   ** localStorage.getItem(저장한 값 이름)
+     : 저장한 값 불러오기 가능.
+   ** localStorage.removeItem(저장한 값 이름)
+     : 저장한 값 삭제 가능.
+
+(#5)----------------------------------------------
+ -> setInterval(함수, 시간) : 일정 시간 간격 두고 함수 실행
+   ** 어떤 특정 부분을 주기적으로 업데이트해야 되거나, 
+      변경된 데이터를 주기적으로 받아와야 되는 경우에 사용.
+ -> setTimeout(함수, 시간) : 일정 시간 기다린 후 함수 실행 (반복 X)
+ -> Date : 날짜, 시간을 위한 메소드 제공하는 객체
+   ** getHours() : 현재 시
+   ** getMinutes() : 현재 분
+   ** getSeconds() : 현재 초
+ -> padStart(문자열 길이, 채울 문자열) : 문자열의 시작을 다른 문자열로 채워줌.
+   EX "1".padStart(2, "0") // "01" 출력
+ -> padEnd() : padStart()와 반대
+ -> 숫자를 문자로 바꾸기
+   EX String(new Date().getHours())
+     // 현재 시간인 19를 "19"로 변환!
+ ✨ 같은 단어 동시 수정? Ctrl + Shift + L
+
+(#6)----------------------------------------------
+ -> Math 모듈
+   ** Math.random() : 0~1 사이의 랜덤한 숫자 제공
+    EX Math.random() * 10 // 0~10(0이상 10미만) 사이의 랜덤한 숫자 제공
+   ** Math.round() : 괄호 안의 숫자를 반올림 해줌
+   ** Math.ceil() : 괄호 안의 숫자를 끝까지 올려줌
+    EX Math.ceil(1.1) // 2 출력
+   ** Math.floor() : 괄호 안의 숫자를 끝까지 내려줌
+ -> array.length : array의 길이 반환해줌
+ -> createElement() : element 새로 생성해줌
+ -> body.appendChild() : body에 html 추가 (가장 아래에)
+ -> body.prepend() : body에 html 추가 (가장 위에)
+
+(#7)----------------------------------------------
+ -> JSON.stringify() : JS 값이나 객체를 JSON 문자열로 반환
+    쓰는 이유? 통신에서 사용 가능한 데이터로 변경해주기 위함!
+   EX 배열 [가, 나, 다]를 배열 '["가", "나", "다"]'로 저장
+ -> JSON.parse() : stringfy()와 반대 기능!
+   EX 배열 '["가", "나"]'을 배열 ["가", "나"]로 저장
+   => JS가 이해할 수 있는 살아있는 값으로 저장해줌.
+ -> 화살표 함수
+   [형태] (파라미터) => 함수 내용
+ -> Date.now() : 밀리초(1000분의 1초)를 주는 함수
+   ** 랜덤으로 숫자를 줄 때 사용하기 유용!
+ -> filter() : forEach()와 비슷함
+   ** true면 그대로 유지, false면 빼고 유지
+
+(#8)----------------------------------------------
+ -> navigator.geolocation.getCurrentPosition()
+   : 장치의 현재 위치 가져옴.
+   ** getCurrentPosition(잘 됐을 시 실행 함수, 에러 발생 시 실행 함수)
+ -> fetch() : JS로 API URL 호출
+
+(*)----------------------------------------------
+ -> background-attachment : 배경 이미지를 뷰포트 내에서 고정? 스크롤?
+   ** fixed : 뷰포트에 대해 고정. 스크롤이 있어도 배경은 움직이지 않음.
+ -> background-size : 배경 이미지 여러 크기로 조절
+   ** contain : 요소 안에 배경 이미지가 다 들어오도록
+   ** cover : 배경 이미지가 요소를 다 덮도록
+ -> 수직 가운데 정렬?
+   ** 부모 요소) display:table
+   ** 자식 요소) display:table-cell / vertical-align:middle
+ -> backdrop-filter: blur()? 배경 블러 처리!
+ -> firstElementChild vs firstChild?
+   ** 전자) 첫 번째 자식 요소 반환
+   ** 후자) 첫 번째 자식이나 null 반환
