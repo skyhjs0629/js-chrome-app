@@ -9,3 +9,5 @@
 ### '노마드 코더'의 강의를 듣고 만든 크롬 앱입니다.
 
 - 랜덤 배경, 현재 시간 및 날씨, 투두리스트의 기능을 담았습니다.
+
+<img src="https://user-images.githubusercontent.com/62992641/200161046-7f85a190-4e2f-476d-ab16-f205b2b18a6e.png" />
