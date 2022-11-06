@@ -11,3 +11,4 @@
 - 랜덤 배경, 현재 시간 및 날씨, 투두리스트의 기능을 담았습니다.
 
 <img src="https://user-images.githubusercontent.com/62992641/200161046-7f85a190-4e2f-476d-ab16-f205b2b18a6e.png" />
+<img src="https://user-images.githubusercontent.com/62992641/200161118-694e2044-9fc4-42d1-ac36-f58f7af046bb.png" />
